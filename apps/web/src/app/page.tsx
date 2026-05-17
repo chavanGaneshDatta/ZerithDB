@@ -119,16 +119,16 @@ export default function LandingPage() {
             <span className="font-semibold text-xl tracking-tight">ZerithDB</span>
           </div>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <Link href="/docs" className="hover:text-black transition-colors font-medium">
+            <Link href="/docs" className="hover:text-foreground transition-colors font-medium">
               Docs
             </Link>
-            <Link href="#features" className="hover:text-black transition-colors">
+            <Link href="#features" className="hover:text-foreground transition-colors">
               Features
             </Link>
-            <Link href="#how-it-works" className="hover:text-black transition-colors">
+            <Link href="#how-it-works" className="hover:text-foreground transition-colors">
               How it works
             </Link>
-            <Link href="#compare" className="hover:text-black transition-colors">
+            <Link href="#compare" className="hover:text-foreground transition-colors">
               Compare
             </Link>
             <Link
@@ -144,7 +144,7 @@ export default function LandingPage() {
               href="https://github.com/Zerith-Labs/ZerithDB"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-black transition-colors"
+              className="hidden md:flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -197,7 +197,7 @@ export default function LandingPage() {
                 <Link
                   href="/docs"
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-black transition-colors"
+                  className="hover:text-foreground transition-colors"
                 >
                   Docs
                 </Link>
@@ -205,7 +205,7 @@ export default function LandingPage() {
                 <Link
                   href="#features"
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-black transition-colors"
+                  className="hover:text-foreground transition-colors"
                 >
                   Features
                 </Link>
@@ -213,7 +213,7 @@ export default function LandingPage() {
                 <Link
                   href="#how-it-works"
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-black transition-colors"
+                  className="hover:text-foreground transition-colors"
                 >
                   How it works
                 </Link>
@@ -221,7 +221,7 @@ export default function LandingPage() {
                 <Link
                   href="#compare"
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-black transition-colors"
+                  className="hover:text-foreground transition-colors"
                 >
                   Compare
                 </Link>
@@ -238,7 +238,7 @@ export default function LandingPage() {
                   href="https://github.com/Zerith-Labs/ZerithDB"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-black transition-colors"
+                  className="hover:text-foreground transition-colors"
                 >
                   GitHub
                 </a>

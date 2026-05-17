@@ -347,29 +347,29 @@ export default function PlaygroundPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
+    <div className="min-h-screen bg-muted/50 flex flex-col font-sans">
       {/* HEADER */}
-      <header className="bg-white border-b border-gray-200 px-6 h-16 flex items-center justify-between sticky top-0 z-50 shadow-sm">
+      <header className="bg-background border-b border-border px-6 h-16 flex items-center justify-between sticky top-0 z-50 shadow-sm">
         <div className="flex items-center gap-4">
           <Link
             href="/"
-            className="text-gray-500 hover:text-black transition-colors flex items-center gap-2 text-sm font-medium"
+            className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 text-sm font-medium"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
-          <div className="h-4 w-px bg-gray-300"></div>
+          <div className="h-4 w-px bg-border"></div>
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 flex items-center justify-center">
               <img src="/logo.svg" alt="ZerithDB Logo" className="w-full h-full" />
             </div>
-            <span className="font-semibold text-gray-900 text-lg tracking-tight">
+            <span className="font-semibold text-foreground text-lg tracking-tight">
               Interactive Playground
             </span>
           </div>
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="hidden md:flex items-center gap-2 text-xs font-medium text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full">
+          <div className="hidden md:flex items-center gap-2 text-xs font-medium text-muted-foreground bg-muted px-3 py-1.5 rounded-full">
             <ArrowRightLeft className="w-3.5 h-3.5" />
             CRDT Sync Operations: {syncCount}
           </div>
@@ -377,10 +377,10 @@ export default function PlaygroundPage() {
           <div
             className={`hidden md:flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full ${
               peerStatus === "connected"
-                ? "bg-green-50 text-green-700"
+                ? "bg-green-500/10 text-green-600"
                 : peerStatus === "connecting"
-                  ? "bg-yellow-50 text-yellow-700"
-                  : "bg-gray-100 text-gray-500"
+                  ? "bg-yellow-500/10 text-yellow-600"
+                  : "bg-muted text-muted-foreground"
             }`}
           >
             <div
@@ -388,27 +388,18 @@ export default function PlaygroundPage() {
                 peerStatus === "connected"
                   ? "bg-green-500"
                   : peerStatus === "connecting"
-                    ? "bg-yellow-500 animate-pulse"
-                    : "bg-gray-400"
+                    ? "bg-yellow-500"
+                    : "bg-muted-foreground"
               }`}
             />
             {peerStatus === "connected"
-              ? "Peers Connected"
+              ? "Network: Online"
               : peerStatus === "connecting"
-                ? "Connecting to Peers..."
-                : "Peers Offline"}
+                ? "Network: Connecting"
+                : "Network: Offline"}
           </div>
-          <button
-            onClick={() => setIsOnline(!isOnline)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all shadow-sm border ${
-              isOnline
-                ? "bg-green-50 text-green-700 border-green-200 hover:bg-green-100"
-                : "bg-red-50 text-red-700 border-red-200 hover:bg-red-100"
-            }`}
-          >
-            {isOnline ? <Wifi className="w-4 h-4" /> : <WifiOff className="w-4 h-4" />}
-            {isOnline ? "Network: Online (P2P)" : "Network: Offline"}
-          </button>
+
+          <ThemeToggle />
         </div>
       </header>
 
